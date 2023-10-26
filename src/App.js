@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {Content, Header} from "antd/es/layout/layout";
+import {Layout} from "antd";
+import Registration from "./pages/Registration";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    return (
+        <Router>
+            <Layout>
+                <Header style={{background:"white", borderBottom: "solid 1px black", height: "5vh"}}>
+                </Header>
+                <Content>
+                    <Routes>
+                        <Route path='/registration' element={<Registration />}/>
+                    </Routes>
+                </Content>
+            </Layout>
+        </Router>
   );
 }
 

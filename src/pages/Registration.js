@@ -40,9 +40,28 @@ const Registration = () => {
         await axios.post('https://food-delivery.kreosoft.ru/api/account/register', data)
             .then((response) => {
                 console.log(response)
-                setHousesData(response.data)
+                localStorage.setItem('token', response.data.token)
+                console.log(housesData)
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Аккаунт успешно зарегестрирован',
+                    showConfirmButton: false,
+                    timer: 2000
+                }).then (() => {
+                        localStorage.setItem("email", data.email)
+                        window.location = '/';
+                    }
+                )
             }).catch((error) => {
                 console.log(error)
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'error',
+                    title: 'Данные заполнены неверно',
+                    showConfirmButton: false,
+                    timer: 2000
+                })
             });
     }
 
@@ -75,16 +94,7 @@ const Registration = () => {
             "gender": event.gender
         }
         postRegistration(requestBody).then (() => {
-            Swal.fire({
-                position: 'top-center',
-                icon: 'success',
-                title: 'Аккаунт успешно зарегестрирован',
-                showConfirmButton: false,
-                timer: 2000
-            }).then (() => {
-                    window.location = '/';
-                }
-            )})
+            })
         console.log(requestBody)
     };
     function onFinishFailed(event){
@@ -246,7 +256,7 @@ const Registration = () => {
                                     filterOption={(inputValue, option) =>
                                         option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
                                     }
-                                    onSelect={value => chooseHouse(value)}
+                                    onSelect={chooseHouse}
                                 />
                             </div>
                         </div>

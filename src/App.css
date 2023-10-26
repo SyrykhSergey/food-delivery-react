@@ -34,3 +34,73 @@
   outline: solid 1px #0080ff;
   border: none;
 }
+
+.headerContainer{
+  display: flex;
+  flex-direction: row;
+  height: max-content;
+}
+.headerRightSide{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  margin-right: 10px;
+  margin-left: auto;
+  align-items: center;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  margin-left: 15px;
+  font-size: 20px;
+}
+
+.catalog-item {
+  padding: 0px;
+  margin: 10px;
+  width: 150px;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.ratingsComp {
+  display: flex;
+  flex-direction: row;
+}
+
+.buying {
+  background: #a3a2a2;
+  margin-bottom: 0;
+  margin-top: auto;
+}
+
+.buyPlace {
+  background: seagreen;
+  border-radius: 5px;
+  float: right;
+}
+.menuBoard {
+  display: flex;
+  justify-content: center;
+  background: white;
+  flex-wrap: wrap;
+}
+
+.menuContainer{
+  border: 1px solid black;
+  width: 42%;
+  height: fit-content;
+  margin-left: 28%;
+  background: white;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+}
+
+.dishesImage{
+  width: 100%;
+  height: 100px;
+}

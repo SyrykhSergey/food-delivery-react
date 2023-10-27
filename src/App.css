@@ -59,7 +59,7 @@ a{
 .catalog-item {
   padding: 0px;
   margin: 10px;
-  width: 150px;
+  width: 12vw;
   border: 1px solid gray;
   display: flex;
   flex-direction: column;
@@ -72,9 +72,14 @@ a{
 }
 
 .buying {
-  background: #a3a2a2;
+  background: #eaeaea;
   margin-bottom: 0;
   margin-top: auto;
+  border-top: solid 1px gray;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1px;
+  padding-right: 5px;
 }
 
 .buyPlace {
@@ -84,16 +89,16 @@ a{
 }
 .menuBoard {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   background: white;
   flex-wrap: wrap;
 }
 
 .menuContainer{
   border: 1px solid black;
-  width: 42%;
+  width: 55vw;
   height: fit-content;
-  margin-left: 28%;
+  margin-left: 23vw;
   background: white;
   margin-top: 40px;
   margin-bottom: 50px;
@@ -103,4 +108,7 @@ a{
 .dishesImage{
   width: 100%;
   height: 100px;
+}
+.description-item-item{
+  margin-left: 20px;
 }

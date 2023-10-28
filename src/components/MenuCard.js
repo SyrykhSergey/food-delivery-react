@@ -79,7 +79,10 @@ const MenuCard = (props) => {
 
             <div className="buying">
                 <p>Цена - {props.data.price}р</p>
-                <Button size={'small'} style={{backgroundColor: "#4573D5", color: "white"}} onClick={onAddBasket}>В корзину</Button>
+                {localStorage.getItem('token').length > 0 &&
+                    <Button size={'small'} style={{backgroundColor: "#4573D5", color: "white"}} onClick={onAddBasket}>В корзину</Button>
+                }
+
             </div>
         </div>
     );

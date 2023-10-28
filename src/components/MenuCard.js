@@ -76,7 +76,6 @@ const MenuCard = (props) => {
                 <p>{props.data.description}</p>
             </div>
 
-
             <div className="buying">
                 <p>Цена - {props.data.price}р</p>
                 {localStorage.getItem('token').length > 0 &&

@@ -43,7 +43,7 @@ const Orders = () => {
         })
     }, []);
     return (
-        <div className={'background'}>
+        <div className={'background'} style={{height:"92vh"}}>
             <div className={'frame-box'} style={{width: "70vw"}}>
                 <div className={'box-content'} style={{display: "flex", border: "solid 1px gray", margin: "20px", alignItems: "center", justifyContent:"space-between"}}>
                     {cartCount &&

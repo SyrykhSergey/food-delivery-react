@@ -21,7 +21,7 @@ const Orders = () => {
     return (
         <div className={'background'}>
             <div className={'frame-box'} style={{width: "70vw"}}>
-                <div className={'box-content'} style={{display: "flex", border: "solid 1px gray", margin: "20px"}}>
+                <div className={'box-content'} style={{display: "flex", border: "solid 1px gray", margin: "20px", alignItems: "center"}}>
                     {cartCount &&
                         <h2 style={{padding: "25px"}}>В корзине есть блюда, вы можете оформить заказ</h2>
                     }

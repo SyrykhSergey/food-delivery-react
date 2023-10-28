@@ -6,6 +6,7 @@ import Registration from "./pages/Registration";
 import Menu from "./pages/Menu"
 import Authorization from "./pages/Authorization";
 import HeaderMenu from "./components/HeaderMenu";
+import ItemMenu from "./pages/ItemMenu";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                         <Route path='/' element={<Menu />} />
                         <Route path='/registration' element={<Registration />} />
                         <Route path='/authorization' element={<Authorization />} />
+                        <Route path='/item/:id' element={<ItemMenu />} />
                     </Routes>
                 </Content>
             </Layout>

@@ -13,7 +13,10 @@ const HeaderMenu = () => {
             localStorage.setItem('token', '');
             window.location = '/';
         }).catch((err) => {
+            localStorage.setItem('email', '');
+            localStorage.setItem('token', '');
             console.log(err)
+            window.location = '/';
         })
     }
     if (isLogged){

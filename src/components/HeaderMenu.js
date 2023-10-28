@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from "axios";
+import cart from "../pages/Cart";
+import {Badge} from "antd";
 
 const HeaderMenu = () => {
+    const [cartData, setCartData] = useState();
     let isLogged = localStorage.getItem('token'); //Заменить при появлении авторизации
     async function quiteAccount(){
         await axios.post('https://food-delivery.kreosoft.ru/api/account/logout',{} , {
@@ -19,6 +22,18 @@ const HeaderMenu = () => {
             window.location = '/';
         })
     }
+    useEffect(() =>{
+        axios.get('https://food-delivery.kreosoft.ru/api/basket', {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            }
+        }).then(response => {
+            setCartData(response.data.length);
+            console.log(response);
+        }).catch(err => {
+            console.error(err);
+        })
+    }, []);
     if (isLogged){
         return(
             <div className="headerContainer">
@@ -26,6 +41,8 @@ const HeaderMenu = () => {
                 <a href={'/'}>Меню</a>
                 <a href={'/orders'}>Заказы</a>
                 <a href={'/cart'}>Корзина</a>
+                <Badge count={cartData ? cartData : 0} style={{backgroundColor: '#52c41a', marginTop: "22px"}}/>
+
                 <div className="headerRightSide">
                     <a href={'/profile'}>{localStorage.getItem('email')}</a>
                     <button style={{height: "40px",

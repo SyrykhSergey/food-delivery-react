@@ -244,7 +244,7 @@ const Purchase = () => {
 
                             let chosedTime = dayjs(event).format('HH-mm-ss').split('-')
 
-                            let currentTime = time[0] * 60 * 60 + time[1] * 60 + time[2]
+                            let currentTime = time[0] * 60 * 60 + time[1] * 60 + time[2] + 60*60
                             let choiceTime = chosedTime[0] * 60 * 60 + chosedTime[1] * 60 + chosedTime[2]
                             // Выводим текущее время на экран
                             console.log(`wrongdate: ${wrongDate}`)

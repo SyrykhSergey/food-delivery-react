@@ -8,7 +8,7 @@ const Authorization = () => {
 
 
     async function postAuthorization(data){
-        await axios.post('https://food-delivery.kreosoft.ru/api/account/register', data)
+        await axios.post('https://food-delivery.kreosoft.ru/api/account/login', data)
             .then((response) => {
                 console.log(response)
                 setResponse(response.code)
@@ -18,7 +18,7 @@ const Authorization = () => {
                     icon: 'success',
                     title: 'Вы успешно вошли',
                     showConfirmButton: false,
-                    timer: 10000
+                    timer: 2000
                 }).then (() => {
                         localStorage.setItem('email', data.email)
                         window.location = '/';
